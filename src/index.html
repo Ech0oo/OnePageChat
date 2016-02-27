@@ -7,24 +7,30 @@
 </head>
 <body ng-controller = "chatCtrl as ctrl">
 <div class="container">
-  <div class="messages-screen">
+
+   <div class="messages-screen">
     <div class="brif-message">
       <div class="bubble">
+        <div class="bubble-time">{{ctrl.messagesData[1].time}}</div>
+        <p class="bubble-text">{{ctrl.messagesData[1].message}}</p>
+      </div>
+      <div class="brif-author">{{ctrl.messagesData[1].name}}</div>
+    </div>
+
+    <div class="brif-message">
+      <div class="bubble owner">
         <div class="bubble-time">{{ctrl.messagesData[0].time}}</div>
         <p class="bubble-text">{{ctrl.messagesData[0].message}}</p>
       </div>
-      <div class="brif-author">{{ctrl.messagesData[0].name}}</div>
+      <div class="brif-author owner">{{ctrl.messagesData[0].name}}</div>
     </div>
-    <div class="bubble">
-      <div class="bubble-time">{{ctrl.messagesData[0].time}}</div>
-      <p class="bubble-text">{{ctrl.messagesData[0].message}}</p>
-    </div>
-    <div class="brif-author">{{ctrl.messagesData[0].name}}</div>
   </div>
-  <form class="send-form" name="sendForm" ng-submit="sendMesage()"  novalidate >
+
+   <form class="send-form" name="sendForm" ng-submit="sendMesage()"  novalidate >
     <input type="text" class="message-input" ng-model="textMessage" required>
     <input type="submit" class="send-button" ng-disabled="sendForm.$invalid">
   </form>
+
 </div>
 
 <!-- inject-vendor:js -->

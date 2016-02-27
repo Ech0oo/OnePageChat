@@ -40,6 +40,10 @@
   box-shadow: 1px 1px 2px #6ecb9f;
 }
 
+.bubble.owner {
+  float: right;
+}
+
 .bubble:before {
   content: ' ';
   position: absolute;
@@ -49,6 +53,12 @@
   top: 100%;
   border: 10px solid;
   border-color: #7ddbaf transparent transparent #7ddbaf;
+}
+
+.bubble.owner:before {
+  left:auto;
+  right: 10px;
+  border-color: #7ddbaf #7ddbaf transparent transparent;
 }
 
 .bubble:after {
@@ -62,6 +72,13 @@
   border-color: #fff transparent transparent #fff;
 }
 
+.bubble.owner:after {
+  left:auto;
+  right: 12px;
+  border-color: #fff #fff transparent transparent;
+}
+
+
 .bubble-time {
   font-size: 0.8em;
   color:#a5a5a5;
@@ -74,4 +91,8 @@
 .brif-author {
   clear: both;
   padding-top: 20px;
+}
+
+.brif-author.owner {
+  text-align: right;
 }
