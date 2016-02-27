@@ -8,7 +8,18 @@
 <body ng-controller = "chatCtrl as ctrl">
 <div class="container">
   <div class="messages-screen">
-
+    <div class="brif-message">
+      <div class="bubble">
+        <div class="bubble-time">{{ctrl.messagesData[0].time}}</div>
+        <p class="bubble-text">{{ctrl.messagesData[0].message}}</p>
+      </div>
+      <div class="brif-author">{{ctrl.messagesData[0].name}}</div>
+    </div>
+    <div class="bubble">
+      <div class="bubble-time">{{ctrl.messagesData[0].time}}</div>
+      <p class="bubble-text">{{ctrl.messagesData[0].message}}</p>
+    </div>
+    <div class="brif-author">{{ctrl.messagesData[0].name}}</div>
   </div>
   <form class="send-form" name="sendForm" ng-submit="sendMesage()"  novalidate >
     <input type="text" class="message-input" ng-model="textMessage" required>
@@ -20,6 +31,7 @@
 <script src="../bower_components/angular/angular.js"></script>
 <!-- inject:js -->
 <script src="app/index.module.js"></script>
+<script src="app/messages.service.js"></script>
 <script src="app/index.controller.js"></script>
 </body>
 </html>
