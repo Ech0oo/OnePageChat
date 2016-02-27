@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.messages-screen {
+  min-height: 300px;
+  border: 1px solid rgb(172, 172, 172);
+
+}
+
+.send-form {
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+.message-input {
+  float:left;
+  width: 80%;
+}
+
+.send-button {
+  width:18%;
+  float: right;
+}
