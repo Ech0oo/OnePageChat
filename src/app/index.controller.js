@@ -10,6 +10,11 @@
         messagesData,
         chatOwner = "Iam";
 
+    // the number limit of messages on the screen
+    vm.messagesLimit = 10;
+
+
+
       //remove comments for use auto get message
 //    $interval(repeatGetMesages, 3000);
 
@@ -21,12 +26,13 @@
 
 
 
+
     vm.sendMessage = sendMessage;
+    
     function sendMessage(textMessage) {
       console.log(textMessage);
       messagesService.sendMessage(new Date().getTime(), textMessage, chatOwner);
     }
-
 
 
 
@@ -59,8 +65,6 @@
       return userName;
     }
 
-    // the number limit of messages on the screen
-    vm.messagesLimit = 10;
 
 
 

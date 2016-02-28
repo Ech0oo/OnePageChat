@@ -19,7 +19,7 @@
     <i id="bottom"></i>
   </div>
 
-  <form class="send-form" user="sendForm" ng-submit="ctrl.sendMessage(ctrl.textMessage)"  novalidate >
+  <form class="send-form" name="sendForm" ng-submit="ctrl.sendMessage(ctrl.textMessage)"  novalidate >
     <input type="text" class="message-input" ng-model="ctrl.textMessage" required>
     <input type="submit" class="send-button" ng-disabled="sendForm.$invalid" value="Send">
   </form>
