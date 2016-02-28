@@ -5,7 +5,7 @@
     .module('appChat')
     .controller('chatCtrl', chatCtrl);
 
-  function chatCtrl(messagesService, $interval) {
+  function chatCtrl(messagesService, $interval, $location, $anchorScroll, $timeout) {
     var vm = this,
         messagesData;
 
@@ -17,6 +17,16 @@
         vm.messagesData = response.data;
       });
 //    }
+
+
+
+    vm.sendMessage = sendMessage;
+    function sendMessage(textMessage) {
+      console.log(textMessage);
+      messagesService.sendMessage(textMessage, Date.now());
+    }
+
+
 
 
 
@@ -40,6 +50,15 @@
     }
 
 
+    // the number limit of messages on the screen
     vm.messagesLimit = 10;
+
+
+
+    // go to the bottom of mesages screen
+    $timeout(function() {
+      $location.hash('bottom');
+      $anchorScroll();
+    })
   }
 }());

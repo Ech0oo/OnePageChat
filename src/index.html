@@ -8,7 +8,7 @@
 <body ng-controller = "chatCtrl as ctrl">
 <div class="container">
 
-   <div class="messages-screen" ng-cloak>
+  <div class="messages-screen" ng-cloak>
     <div class="brif-message" ng-repeat="brif in ctrl.messagesData | orderBy: 'time' | limitTo: ctrl.messagesLimit">
       <div class="ng-class: ctrl.setBubbleClass(brif.name)">
         <div class="bubble-time">{{brif.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
@@ -16,9 +16,10 @@
       </div>
       <div class="ng-class: ctrl.setNameClass(brif.name)">{{brif.name}}</div>
     </div>
+    <i id="bottom"></i>
   </div>
 
-   <form class="send-form" name="sendForm" ng-submit="sendMesage()"  novalidate >
+   <form class="send-form" name="sendForm" ng-submit="ctrl.sendMessage(textMessage)"  novalidate >
     <input type="text" class="message-input" ng-model="textMessage" required>
     <input type="submit" class="send-button" ng-disabled="sendForm.$invalid">
   </form>
