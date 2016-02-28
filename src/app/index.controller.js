@@ -39,5 +39,7 @@
       return "brif-author";
     }
 
+
+    vm.messagesLimit = 10;
   }
 }());

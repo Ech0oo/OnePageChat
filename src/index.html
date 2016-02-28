@@ -9,9 +9,9 @@
 <div class="container">
 
    <div class="messages-screen" ng-cloak>
-    <div class="brif-message" ng-repeat="brif in ctrl.messagesData">
+    <div class="brif-message" ng-repeat="brif in ctrl.messagesData | orderBy: 'time' | limitTo: ctrl.messagesLimit">
       <div class="ng-class: ctrl.setBubbleClass(brif.name)">
-        <div class="bubble-time">{{brif.time}}</div>
+        <div class="bubble-time">{{brif.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
         <p class="bubble-text">{{brif.message}}</p>
       </div>
       <div class="ng-class: ctrl.setNameClass(brif.name)">{{brif.name}}</div>
