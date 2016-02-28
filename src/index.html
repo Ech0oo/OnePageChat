@@ -8,21 +8,13 @@
 <body ng-controller = "chatCtrl as ctrl">
 <div class="container">
 
-   <div class="messages-screen">
-    <div class="brif-message">
-      <div class="bubble">
-        <div class="bubble-time">{{ctrl.messagesData[1].time}}</div>
-        <p class="bubble-text">{{ctrl.messagesData[1].message}}</p>
+   <div class="messages-screen" ng-cloak>
+    <div class="brif-message" ng-repeat="brif in ctrl.messagesData">
+      <div class="ng-class: ctrl.setBubbleClass(brif.name)">
+        <div class="bubble-time">{{brif.time}}</div>
+        <p class="bubble-text">{{brif.message}}</p>
       </div>
-      <div class="brif-author">{{ctrl.messagesData[1].name}}</div>
-    </div>
-
-    <div class="brif-message">
-      <div class="bubble owner">
-        <div class="bubble-time">{{ctrl.messagesData[0].time}}</div>
-        <p class="bubble-text">{{ctrl.messagesData[0].message}}</p>
-      </div>
-      <div class="brif-author owner">{{ctrl.messagesData[0].name}}</div>
+      <div class="ng-class: ctrl.setNameClass(brif.name)">{{brif.name}}</div>
     </div>
   </div>
 

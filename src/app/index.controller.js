@@ -5,15 +5,39 @@
     .module('appChat')
     .controller('chatCtrl', chatCtrl);
 
-  function chatCtrl(messagesService) {
+  function chatCtrl(messagesService, $interval) {
     var vm = this,
         messagesData;
 
-    messagesService.getMessages().then(function(response) {
-      vm.messagesData = response.data;
-    });
+      //remove comments for use auto get message
+//    $interval(repeatGetMesages, 3000);
 
-    vm.textForCheck = "some text";
+//    function repeatGetMesages() {
+      messagesService.getMessages().then(function(response) {
+        vm.messagesData = response.data;
+      });
+//    }
+
+
+
+    vm.setBubbleClass = setBubbleClass;
+    vm.setNameClass = setNameClass;
+
+    function setBubbleClass(owner) {
+      if (owner === 'Iam') {
+        return "bubble owner";
+      }
+
+      return "bubble";
+    }
+
+    function setNameClass(owner) {
+      if (owner === 'Iam') {
+        return "brif-author owner";
+      }
+
+      return "brif-author";
+    }
+
   }
-
 }());
