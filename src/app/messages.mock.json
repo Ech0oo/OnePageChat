@@ -1,15 +1,15 @@
 [
-  {"name": "Iam", "message": "Some text 1", "time": "1254638791236" },
-  {"name": "SomeOne", "message": "Some text 2", "time": "1244455495487" },
-  {"name": "Iam", "message": "Some text 3", "time": "1246876794256" },
-  {"name": "SomeOne", "message": "Some text 4", "time": "1256456797896" },
-  {"name": "SomeOne", "message": "Some text 5", "time": "1256467545236" },
-  {"name": "Iam", "message": "Some text 6", "time": "1256463576541" },
-  {"name": "SomeOne", "message": "Some text 7", "time": "1256498527895" },
-  {"name": "Iam", "message": "Some text 8", "time": "1256434566521" },
-  {"name": "Iam", "message": "Some text 9", "time": "1256475643652" },
-  {"name": "SomeOne", "message": "Some text 10", "time": "1256469516352" },
-  {"name": "Iam", "message": "Some text 11", "time": "1256499955236" },
-  {"name": "SomeOne", "message": "Some text 12", "time": "1256464554521" },
-  {"name": "Iam", "message": "Some text 13", "time": "1256422358547" }
+  {"user": "Iam", "msg": "Some text 1", "timestamp": "1254638791236" },
+  {"user": "SomeOne", "msg": "Some text 2", "timestamp": "1244455495487" },
+  {"user": "Iam", "msg": "Some text 3", "timestamp": "1246876794256" },
+  {"user": "SomeOne", "msg": "Some text 4", "timestamp": "1256456797896" },
+  {"user": "SomeOne", "msg": "Some text 5", "timestamp": "1256467545236" },
+  {"user": "Iam", "msg": "Some text 6", "timestamp": "1256463576541" },
+  {"user": "SomeOne", "msg": "Some text 7", "timestamp": "1256498527895" },
+  {"user": "Iam", "msg": "Some text 8", "timestamp": "1256434566521" },
+  {"user": "Iam", "msg": "Some text 9", "timestamp": "1256475643652" },
+  {"user": "SomeOne", "msg": "Some text 10", "timestamp": "1256469516352" },
+  {"user": "Iam", "msg": "Some text 11", "timestamp": "1256499955236" },
+  {"user": "SomeOne", "msg": "Some text 12", "timestamp": "1256464554521" },
+  {"user": "Iam", "msg": "Some text 13", "timestamp": "1256422358547" }
 ]

@@ -17,9 +17,9 @@
       return $http.get('api/realServer');
     };
 
-    this.sendMessage = function (textMessage) {
+    this.sendMessage = function (timeStamp, textMessage, userName) {
       $http.get('https://www.your-website.com/api/users.json', {
-        params:  {message: 'textMessage', time: 'timeStamp'}
+        params:  {timestamp: timeStamp, msg: textMessage, username: userName}
       }
         );
     };
@@ -32,9 +32,9 @@
         return $http.get('app/messages.mock.json');
       };
 
-      this.sendMessage = function (textMessage, timeStamp) {
-        $http.get('https://www.your-website.com/api/users.json', {
-            params:  {message: textMessage, time: timeStamp}
+      this.sendMessage = function (timeStamp, textMessage, userName) {
+        $http.get('http://api/message/send', {
+            params:  {timestamp: timeStamp, msg: textMessage, username: userName}
           }
         );
       };

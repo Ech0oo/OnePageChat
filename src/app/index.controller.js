@@ -7,7 +7,8 @@
 
   function chatCtrl(messagesService, $interval, $location, $anchorScroll, $timeout) {
     var vm = this,
-        messagesData;
+        messagesData,
+        chatOwner = "Iam";
 
       //remove comments for use auto get message
 //    $interval(repeatGetMesages, 3000);
@@ -23,7 +24,7 @@
     vm.sendMessage = sendMessage;
     function sendMessage(textMessage) {
       console.log(textMessage);
-      messagesService.sendMessage(textMessage, Date.now());
+      messagesService.sendMessage(new Date().getTime(), textMessage, chatOwner);
     }
 
 
@@ -32,9 +33,10 @@
 
     vm.setBubbleClass = setBubbleClass;
     vm.setNameClass = setNameClass;
+    vm.setUserName = setUserName;
 
     function setBubbleClass(owner) {
-      if (owner === 'Iam') {
+      if (owner === chatOwner) {
         return "bubble owner";
       }
 
@@ -42,13 +44,20 @@
     }
 
     function setNameClass(owner) {
-      if (owner === 'Iam') {
+      if (owner === chatOwner) {
         return "brif-author owner";
       }
 
       return "brif-author";
     }
 
+    function setUserName(userName) {
+      if (userName === chatOwner) {
+        return "yours"
+      }
+
+      return userName;
+    }
 
     // the number limit of messages on the screen
     vm.messagesLimit = 10;
