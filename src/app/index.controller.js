@@ -59,7 +59,7 @@
 
     function setUserName(userName) {
       if (userName === chatOwner) {
-        return "yours"
+        return "yours";
       }
 
       return userName;
@@ -72,6 +72,6 @@
     $timeout(function() {
       $location.hash('bottom');
       $anchorScroll();
-    })
+    });
   }
 }());
