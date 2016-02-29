@@ -12,7 +12,7 @@
       });
     });
 
-  function messagesService($http) {
+  function messagesService($http, $q) {
     this.getMessages = function () {
       return $http.get('api/realServer');
     };
@@ -27,17 +27,39 @@
 
 
 
-    function messagesServiceMock($http) {
+    function messagesServiceMock($http, $q) {
+      var messagesData = [];
+
       this.getMessages = function () {
-        return $http.get('app/messages.mock.json');
+        console.log('getService');
+           return $http.get('app/messages.mock.json').then(successCallbackGet, errorCallback);
       };
 
       this.sendMessage = function (timeStamp, textMessage, userName) {
         $http.get('http://api/message/send', {
             params:  {timestamp: timeStamp, msg: textMessage, username: userName}
-          }
-        );
+        });
       };
+
+
+
+      function successCallbackGet(response) {
+        var responseDataArr,
+            i,
+            n;
+
+        responseDataArr = response.data;
+        for (n = responseDataArr.length, i = 0; i < n; i += 1) {
+          messagesData.push(responseDataArr[i]);
+        }
+        
+        return messagesData;
+      }
+
+      function errorCallback(response) {
+        return "Error: " + response.status + " " + response.statusText;
+      }
+
     }
 
 }());
