@@ -13,24 +13,32 @@
     // the number limit of messages on the screen
     vm.messagesLimit = 10;
 
-
-
-      //remove comments for use auto get message
-//    $interval(repeatGetMesages, 3000);
-
-//    function repeatGetMesages() {
+   
+    // Only for the test, delete after start autoGetMessages
+    vm.repeatGetMesages = repeatGetMesages;
+    function repeatGetMesages() {
       messagesService.getMessages().then(function(response) {
-        vm.messagesData = response.data;
+        vm.messagesData = response;
       });
-//    }
-
+    }
+    // end only for the test.
+    
+    
+    
+    // Remove comments for use auto get messages
+    // $interval(repeatGetMesages, 3000);
+    // function repeatGetMesages() {
+      messagesService.getMessages().then(function(response) {
+        vm.messagesData = response;
+      });
+    // }
+    // end remove comments.
 
 
 
     vm.sendMessage = sendMessage;
     
     function sendMessage(textMessage) {
-      console.log(textMessage);
       messagesService.sendMessage(new Date().getTime(), textMessage, chatOwner);
     }
 
@@ -59,7 +67,7 @@
 
     function setUserName(userName) {
       if (userName === chatOwner) {
-        return "yours"
+        return "yours";
       }
 
       return userName;
@@ -72,6 +80,6 @@
     $timeout(function() {
       $location.hash('bottom');
       $anchorScroll();
-    })
+    });
   }
 }());

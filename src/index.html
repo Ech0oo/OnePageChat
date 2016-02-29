@@ -5,11 +5,11 @@
   <title>The chat page</title>
   <link rel="stylesheet" href="app/index.css">
 </head>
-<body ng-controller = "chatCtrl as ctrl">
-<div class="container" ng-cloak>
+<body ng-controller = "chatCtrl as ctrl" ng-cloak>
+<div class="container">
 
   <div class="messages-screen">
-    <div class="brif-message" ng-repeat="brif in ctrl.messagesData | orderBy: 'timestamp' | limitTo: ctrl.messagesLimit">
+    <div class="brif-message" ng-repeat="brif in ctrl.messagesData | orderBy: 'timestamp' | limitTo: -ctrl.messagesLimit">
       <div class="ng-class: ctrl.setBubbleClass(brif.user)">
         <div class="bubble-time">{{brif.timestamp | date:'yyyy-MM-dd HH:mm:ss'}}</div>
         <p class="bubble-text">{{brif.msg}}</p>
@@ -24,6 +24,7 @@
     <input type="submit" class="send-button" ng-disabled="sendForm.$invalid" value="Send">
   </form>
 
+  <p ng-click="ctrl.repeatGetMesages()">Get new messages (for test only)</p>
 </div>
 
 <!-- inject-vendor:js -->
